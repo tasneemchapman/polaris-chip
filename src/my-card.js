@@ -20,13 +20,27 @@ export class MyCard extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: block;
+        display: inline-flex;
+      }
+      a {
+        background-color: grey;
+        color: black;
+        font-size: 12px;
+        padding: 10px;
+        margin: 8px;
+        text-decoration: none;
+      }
+      a:hover,
+      a:active {
+        background-color: LightGray; 
+        border-radius: 8px;
+        border-color: solid black;
       }
     `;
   }
 
   render() {
-    return html`<div>${this.title}</div>`;
+    return html`<a>${this.title}</a>`;
   }
 
   static get properties() {

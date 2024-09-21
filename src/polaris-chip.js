@@ -65,9 +65,9 @@ export class PolarisChip extends LitElement {
       }
 
       a:hover,
-      a:hover {
+      a:active {
         background-color: pink; //changed to pink
-        border: 1px solid black;
+        border: 8px solid black;
       }
     `;
   }
