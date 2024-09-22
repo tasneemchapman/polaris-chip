@@ -91,7 +91,7 @@ export class PolarisChip extends LitElement {
     // it is going to print the title of the element. The magic of Lit is that
     // when title is changed (even by inspecting the document and hacking the value)
     // it will automatically update what is displayed and do so incredibly quickly
-    return html`<a href="${this.link}">${this.title}</a>`;
+    return html`<a href="${this.link}">${this.title} ${this.shiny}</a>`;
   }
 
   // LitElement uses the properties call to do the following:

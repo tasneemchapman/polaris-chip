@@ -14,7 +14,9 @@ export class MyCard extends LitElement {
 
   constructor() {
     super();
-    this.title = "My card";
+    this.button = "My Card";
+    this.event = null;
+    
   }
 
   static get styles() {
@@ -29,23 +31,24 @@ export class MyCard extends LitElement {
         padding: 10px;
         margin: 8px;
         text-decoration: none;
+        border: 1px solid;
       }
       a:hover,
       a:active {
         background-color: LightGray; 
         border-radius: 8px;
-        border-color: solid black;
       }
     `;
   }
 
   render() {
-    return html`<a>${this.title}</a>`;
+    return html`<a>${this.button}</a>`;
   }
 
   static get properties() {
     return {
-      title: { type: String },
+      button: { type: String },
+      event: { type: String} 
     };
   }
 }
