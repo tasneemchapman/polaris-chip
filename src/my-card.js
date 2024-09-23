@@ -16,6 +16,7 @@ export class MyCard extends LitElement {
     super();
     this.button = "My Card";
     this.event = null;
+    this.photo = null;
     
   }
 
@@ -24,6 +25,7 @@ export class MyCard extends LitElement {
       :host {
         display: inline-flex;
       }
+      
       a {
         background-color: grey;
         color: black;
@@ -42,12 +44,13 @@ export class MyCard extends LitElement {
   }
 
   render() {
-    return html`<a>${this.button}</a>`;
+    return html`<a src="${this.photo}">${this.button} </a>`;
   }
 
   static get properties() {
     return {
       button: { type: String },
+      photo: {type: String},
       event: { type: String} 
     };
   }

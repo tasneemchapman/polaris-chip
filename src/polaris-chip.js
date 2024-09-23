@@ -51,7 +51,7 @@ export class PolarisChip extends LitElement {
         display: inline-flex;
       }
       
-      :host(shiny) a { //[means this element is on the html tag]
+      :host([shiny]) a { //[means this element is on the html tag]
         background-color: yellow;
       }
 
