@@ -14,9 +14,11 @@ export class MyCard extends LitElement {
 
   constructor() {
     super();
-    this.button = "My Card";
-    this.event = null;
-    this.photo = null;
+    this.title = "place holder";
+    this.link = '#';
+    this.image = null;
+    this.description = "";
+    this.buttonTitle = "";
     
   }
 
@@ -25,18 +27,39 @@ export class MyCard extends LitElement {
       :host {
         display: inline-flex;
       }
-      
-      a {
+      div {
+        padding: 16px;
+        text-align: center-align;
+        font-family: Georgia, 'Times New Roman';
+        justify-content: center;
+        border: 1px solid;
+        border-radius: 8px;
+        margin: 24px;
+      }
+      img {
+        margin: auto;
+        display: flex;
+        height: 275px;
+        width: auto;
+  
+      }
+      h2 {
+        text-align: center;
+      }
+    
+      a, button {
         background-color: grey;
         color: black;
         font-size: 12px;
-        padding: 10px;
+        padding: 6px;
         margin: 8px;
         text-decoration: none;
         border: 1px solid;
+        text-align: center;
       }
+      
       a:hover,
-      a:active {
+      a:focus {
         background-color: LightGray; 
         border-radius: 8px;
       }
@@ -44,16 +67,25 @@ export class MyCard extends LitElement {
   }
 
   render() {
-    return html`<a src="${this.photo}">${this.button} </a>`;
-  }
+    return html`
+    <div>
+    <img src="${this.image}"/>
+    <h2>${this.title}</h2>
+    <p>${this.description}</p>
+    <a href="${this.link}" target="_blank">${this.buttonTitle}</a>
+  </div>
+  `;
+}
 
-  static get properties() {
-    return {
-      button: { type: String },
-      photo: {type: String},
-      event: { type: String} 
-    };
-  }
+static get properties() {
+  return {
+    title: { type: String },
+    image: { type: String },
+    link: { type: String },
+    description: { type: String },
+    buttonTitle: { type: String}
+   };
+ } 
 }
 
 globalThis.customElements.define(MyCard.tag, MyCard);
