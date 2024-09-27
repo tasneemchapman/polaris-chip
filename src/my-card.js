@@ -34,6 +34,7 @@ export class MyCard extends LitElement {
         background-color: pink;
         border: 2px solid fuchsia;
         box-shadow: 20px 5px 5px red;
+        margin-bottom: 25px;
       } 
       details summary {
         font-size: 15px;
