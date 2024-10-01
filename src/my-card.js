@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-// import '@haxtheweb/multiple-choice.js';
+//import '@haxtheweb/multiple-choice/multiple-choice.js';
 
 /**
  * Now it's your turn. Here's what we need to try and do:
@@ -21,6 +21,7 @@ export class MyCard extends LitElement {
     this.description = "Lets just see if this does anything";
     this.buttonTitle = "";
     this.fancy = false;
+    this.input = "";
    // this.summary = "More Information";
     
   }
@@ -105,7 +106,14 @@ export class MyCard extends LitElement {
     <details ?open="${this.fancy}" @toggle="${this.openChanged}">
       <summary>Description</summary>
         <div>
-         <slot>${this.description}</slot>
+         <slot>
+          <multiple-choice>
+            <input type="checkbox" value=${this.input} role="textbox">
+            <input type="checkbox" value=${this.input}>
+            <input type="checkbox" value=${this.input} correct="correct">
+            <input type="checkbox" value=${this.input}>
+            </multiple-choice>
+         </slot>
         </div>
       </details>
     <a href="${this.link}" target="_blank">${this.buttonTitle}</a>
@@ -129,8 +137,8 @@ static get properties() {
     link: { type: String },
     description: { type: String },
     buttonTitle: { type: String}, //attribute: button-title
-    fancy: { type: Boolean, reflect: true }
-    //summary: { type, String}
+    fancy: { type: Boolean, reflect: true },
+    input : {type: String}
    };
  } 
 }
